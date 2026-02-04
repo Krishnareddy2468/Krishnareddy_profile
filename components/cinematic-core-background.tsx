@@ -138,7 +138,7 @@ function IoTNode({ radius, speed, color, offset, instability }: { radius: number
         length={10}
         color={new THREE.Color(color)}
         attenuation={(t) => t * t}
-        target={ref}
+        target={ref as React.RefObject<THREE.Object3D>}
       >
         <mesh ref={ref}>
           <sphereGeometry args={[0.08, 16, 16]} />
@@ -223,7 +223,13 @@ function Scene() {
       {/* The System Controller manages the "Living" state logic */}
       <SystemController />
 
-      <Cloud opacity={0.03} speed={0.05} width={15} depth={5} segments={6} color="#0f172a" />
+      <Cloud 
+        opacity={0.03} 
+        speed={0.05} 
+        bounds={[15, 5, 15]}
+        segments={6} 
+        color="#0f172a" 
+      />
     </>
   )
 }

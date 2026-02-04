@@ -95,7 +95,7 @@ export function GlassCard({ children, className, hover = true, tilt = true }: Gl
           background: useTransform(
             [x, y],
             ([latestX, latestY]) => `radial-gradient(
-              600px circle at ${latestX * 100 + 50}% ${latestY * 100 + 50}%,
+              600px circle at ${(latestX as number) * 100 + 50}% ${(latestY as number) * 100 + 50}%,
               rgba(255, 255, 255, 0.05),
               transparent 40%
             )`

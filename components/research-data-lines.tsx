@@ -29,10 +29,8 @@ export function ResearchDataLines({ paused = false }: { paused?: boolean }) {
           transition={{
             duration: 10,
             repeat: Infinity,
-            ease: "linear",
-            playState: paused ? "paused" : "running" // Note: framer motion doesn't support playState directly like this, need active check
+            ease: "linear"
           }}
-          // Framer motion loop manual handling or standard style
           style={{
              animationPlayState: paused ? 'paused' : 'running'
           }}
