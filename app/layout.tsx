@@ -4,8 +4,8 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: 'Krishna Reddy | AI Engineer & Computer Science',
@@ -38,8 +38,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased relative min-h-screen selection:bg-blue-500/30 selection:text-blue-200`}>
+    <html lang="en" suppressHydrationWarning>
+      <body 
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased relative min-h-screen selection:bg-blue-500/30 selection:text-blue-200`}
+        suppressHydrationWarning
+      >
         <GlobalVolumetricLight />
         {children}
         <Analytics />

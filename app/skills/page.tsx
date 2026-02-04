@@ -2,17 +2,15 @@
 
 import { Footer } from "@/components/footer"
 import { GlassNavbar } from "@/components/glass-navbar"
-import { HeroSection } from "@/components/sections/hero-section"
+import { SkillsSection } from "@/components/sections/skills-section"
 
-export default function HomePage() {
+export default function SkillsPage() {
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      {/* Glass Navigation */}
       <GlassNavbar />
-
-      {/* Hero Section - Only on home */}
-      <HeroSection />
-      
+      <div className="pt-24">
+        <SkillsSection />
+      </div>
       <Footer />
     </main>
   )
