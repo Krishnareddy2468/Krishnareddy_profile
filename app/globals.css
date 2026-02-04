@@ -1,0 +1,292 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* 
+  RESEARCH LAB UI - GLOBAL THEME 
+  Cinematic, High-Contrast, Intelligent, Experimental
+*/
+
+:root {
+  /* BACKGROUNDS - Stealth Black / Carbon */
+  --background: oklch(0.05 0 0);
+  /* Deepest carbon black */
+
+  /* FOREGROUND - White */
+  --foreground: oklch(0.98 0 0);
+
+  /* CARDS - Matte Black */
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.98 0 0);
+
+  /* POPOVERS */
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+
+  /* PRIMARY ACCENT: Titanium White / Silver */
+  --primary: oklch(0.95 0 0);
+  /* Bright Silver */
+  --primary-foreground: oklch(0.05 0 0);
+
+  /* SECONDARY: Gunmetal Grey */
+  --secondary: oklch(0.20 0 0);
+  --secondary-foreground: oklch(0.90 0 0);
+
+  /* MUTED: Ash */
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.55 0 0);
+
+  /* ACCENT: Carbon Fiber */
+  --accent: oklch(0.20 0 0);
+  --accent-foreground: oklch(0.98 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.005 100);
+
+  /* BORDERS: Subtle Steel */
+  --border: oklch(0.20 0 0);
+  --input: oklch(0.20 0 0);
+  --ring: oklch(0.80 0 0);
+
+  /* CHARTS - Monochrome Data Viz */
+  --chart-1: oklch(0.90 0 0);
+  /* White */
+  --chart-2: oklch(0.70 0 0);
+  /* Light Grey */
+  --chart-3: oklch(0.50 0 0);
+  /* Mid Grey */
+  --chart-4: oklch(0.30 0 0);
+  /* Dark Grey */
+  --chart-5: oklch(0.20 0 0);
+  /* Charcoal */
+
+  --radius: 0.5rem;
+
+  /* GLASSMORPHISM - Stealth Fighter Aesthetic */
+  --glass-bg: rgba(10, 10, 10, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  --glass-glow: 0 0 20px rgba(255, 255, 255, 0.15);
+
+  /* GRADIENTS - Noir */
+  --gradient-start: oklch(0.05 0 0);
+  --gradient-mid: oklch(0.10 0 0);
+  --gradient-end: oklch(0.02 0 0);
+}
+
+@theme inline {
+  /* System font stack - clean, modern, neutral (Grok/xAI style) */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-glass-glow: var(--glass-glow);
+
+  --color-gradient-start: var(--gradient-start);
+  --color-gradient-mid: var(--gradient-mid);
+  --color-gradient-end: var(--gradient-end);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    /* Reverted to dark scheme */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'ss01' on, 'ss02' on;
+    letter-spacing: -0.01em;
+    /* Deep space gradient background */
+    background-image:
+      radial-gradient(circle at 50% 0%, oklch(0.25 0 0 / 0.15), transparent 70%),
+      radial-gradient(circle at 80% 10%, oklch(0.20 0 0 / 0.1), transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* AI Lab / Research Platform Typography */
+  h1 {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    /* Wide for large headings - confident */
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+  }
+
+  h3,
+  h4 {
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+
+  h5,
+  h6 {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+}
+
+/* Professional Custom Scrollbar - Dark & Minimal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.3 0.02 260);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Button Icon Animations */
+.group:hover svg {
+  transform: translateX(3px);
+  transition: transform 0.2s ease-out;
+}
+
+.group svg {
+  transition: transform 0.2s ease-out;
+}
+
+/* Radial gradient for background masking */
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
+
+/* Utility for text glows */
+.text-glow {
+  text-shadow: 0 0 30px var(--primary);
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* GPU acceleration for animated elements */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Smooth scrolling with scroll-snap protection */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent layout shifts */
+section {
+  contain: layout style;
+}
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile optimizations - disable heavy effects */
+@media (max-width: 1024px) {
+
+  /* Remove blur effects on mobile */
+  .backdrop-blur-md,
+  .backdrop-blur-sm {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Simplify shadows */
+  .shadow-lg,
+  .shadow-2xl {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Disable parallax transforms on mobile */
+  [style*="will-change"] {
+    will-change: auto !important;
+  }
+}
+
+/* Optimize paint performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+/* Efficient CSS Animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+  will-change: transform;
+}
