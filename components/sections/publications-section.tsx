@@ -1,5 +1,6 @@
 "use client"
 
+import { GlassButton } from "@/components/glass-button"
 import { GlassCard } from "@/components/glass-card"
 import { motion, useInView } from "framer-motion"
 import { FileText, ExternalLink, Mic, Award, Users, Calendar, Globe } from "lucide-react"
@@ -81,6 +82,19 @@ export function PublicationsSection() {
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto italic">
             All publications were completed under direct faculty supervision and accepted at peer-reviewed international conferences.
           </p>
+          
+          <div className="mt-8 flex justify-center">
+            <GlassButton 
+              href="https://www.researchgate.net/profile/Nalla-Reddy-3"
+              target="_blank" 
+              rel="noopener noreferrer"
+              variant="secondary"
+              className="text-sm px-5 py-2 h-auto min-h-0"
+            >
+              <ExternalLink className="w-4 h-4" />
+              View ResearchGate Profile
+            </GlassButton>
+          </div>
         </motion.div>
 
         {/* Publications Grid */}

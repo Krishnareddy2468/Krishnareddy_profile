@@ -16,13 +16,10 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo & Copyright */}
-          <div className="flex flex-col items-center md:items-start gap-2">
+            <div className="flex flex-col items-center md:items-start gap-2">
             <span className="text-xl font-bold text-foreground">
               N. Krishna Reddy
             </span>
-            <p className="text-sm text-muted-foreground flex items-center gap-1">
-              Built with <Heart className="w-3 h-3 text-primary fill-primary" /> using Next.js & Framer Motion
-            </p>
           </div>
 
           {/* Quick Links */}

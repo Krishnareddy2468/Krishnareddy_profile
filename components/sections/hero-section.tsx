@@ -98,7 +98,7 @@ export function HeroSection() {
         {/* Role - Slides in later */}
         <motion.div variants={subVariant} className="mb-8">
           <span className="text-xl md:text-2xl lg:text-3xl font-medium text-primary text-glow">
-            AI & Intelligent Systems Engineer
+            Computer Science Student | AI & IoT Systems Developer
           </span>
         </motion.div>
 
@@ -107,21 +107,37 @@ export function HeroSection() {
           variants={subVariant}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed font-light text-balance"
         >
-          Building production-grade AI systems across Computer Vision, IoT, and applied research — from field-tested hardware to peer-reviewed publications.
+          Developing AI and machine learning systems with real-world applications, integrated with backend services and scalable cloud deployment.
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
           variants={buttonVariant}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col items-center gap-6"
         >
-          <GlassButton href="#projects" variant="primary">
-            View Projects & Research
-          </GlassButton>
-          <GlassButton href="/resume.pdf" variant="secondary">
-            <Download className="w-4 h-4" />
-            Download Resume
-          </GlassButton>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <GlassButton href="/projects" variant="primary">
+              Explore Systems I've Built
+            </GlassButton>
+            <GlassButton 
+              href="https://drive.google.com/file/d/1BYOnzYXAWjHJ0Ah4_0VAVu2WjCZFFS4l/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+            >
+              <Download className="w-4 h-4" />
+              Resume
+            </GlassButton>
+          </div>
+
+          <motion.a
+            href="/research"
+            className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
+            whileHover={{ x: 2 }}
+          >
+            View Research Publications
+            <span className="transition-transform group-hover:translate-x-1">→</span>
+          </motion.a>
         </motion.div>
 
         {/* Scroll Indicator */}

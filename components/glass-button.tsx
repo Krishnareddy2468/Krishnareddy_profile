@@ -2,15 +2,15 @@
 
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import type { ReactNode } from "react"
+import type { ReactNode, ComponentProps } from "react"
 
-interface GlassButtonProps {
+type GlassButtonProps = {
   children: ReactNode
   className?: string
   variant?: "primary" | "secondary"
   onClick?: () => void
   href?: string
-}
+} & ComponentProps<"button"> & ComponentProps<"a">
 
 export function GlassButton({
   children,
@@ -18,6 +18,7 @@ export function GlassButton({
   variant = "primary",
   onClick,
   href,
+  ...props
 }: GlassButtonProps) {
   const baseStyles = cn(
     // Base: Sharp system button
@@ -47,6 +48,7 @@ export function GlassButton({
       whileHover={{ y: -2, scale: 1.01 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2 }}
+      {...(props as any)}
     >
       <span className="flex items-center gap-2">
         {children}

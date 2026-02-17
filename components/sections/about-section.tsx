@@ -34,7 +34,7 @@ const educationData = [
   },
   {
     degree: "Secondary Education",
-    institution: "Vedham High School, State Board, India",
+    institution: "Vedham High School, Telangana State Board, India",
     gpa: "10 / 10",
     year: "2020",
     current: false,
@@ -60,6 +60,12 @@ const socialLinks = [
     value: "Krishnareddy2468",
     href: "https://github.com/Krishnareddy2468",
   },
+  {
+    icon: Mail,
+    label: "Personal Email",
+    value: "nkrishnareddy2003@gmail.com",
+    href: "mailto:nkrishnareddy2003@gmail.com",
+  },
 ]
 
 export function AboutSection() {
@@ -80,15 +86,15 @@ export function AboutSection() {
             About
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-4 text-foreground">
-            Background & Focus
+            About Me
           </h2>
         </motion.div>
 
         {/* Main Profile Card */}
         <motion.div variants={cardReveal} className="mb-8">
           <GlassCard className="p-8 md:p-10">
-            <div className="grid md:grid-cols-[1fr,auto] gap-8 items-start">
-              {/* Left: Profile Info */}
+            <div>
+              {/* Profile Info */}
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-16 h-16 rounded-[4px] bg-gradient-to-br from-primary/20 to-cyan-500/20 border border-primary/30 flex items-center justify-center">
@@ -111,21 +117,34 @@ export function AboutSection() {
                 </div>
 
                 {/* Objective */}
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Target className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-semibold text-foreground uppercase tracking-wider">
-                      Research Objective
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    A research-oriented Integrated M.Tech student in Computer Science with strong experience in{" "}
-                    <span className="text-foreground font-medium">Artificial Intelligence</span>,{" "}
-                    <span className="text-foreground font-medium">Computer Vision</span>, and{" "}
-                    <span className="text-foreground font-medium">IoT-based intelligent systems</span>. 
-                    Experienced in supervised research, industry-grade system development, and peer-reviewed publications. 
-                    Seeking a research-focused internship to contribute to applied AI, data-driven systems, and real-world problem solving.
+                {/* Bio Content */}
+                <div className="space-y-4 mb-8 text-muted-foreground leading-relaxed">
+                  <p>
+                    I am an Integrated M.Tech Computer Science student with a strong focus on Artificial Intelligence and intelligent system development. My work centers on building machine learning applications that move beyond experimentation into real-world deployment.
                   </p>
+                  <p>
+                     I have experience developing computer vision models, backend APIs, and cloud-integrated systems, along with practical exposure to IoT and edge AI platforms. I am particularly interested in designing scalable AI systems that combine model performance, system architecture, and deployment reliability.
+                  </p>
+                  <p>
+                    I am currently seeking internship opportunities in AI, machine learning, and intelligent systems engineering where I can contribute to applied research and production-oriented development.
+                  </p>
+                </div>
+
+                {/* Core Areas of Interest */}
+                <div className="mb-8">
+                  <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Core Areas of Interest</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {[
+                      "Artificial Intelligence & Machine Learning",
+                      "Computer Vision & Applied Deep Learning",
+                      "Backend & Cloud-Integrated Systems",
+                      "Edge AI & IoT Applications"
+                    ].map((area) => (
+                      <div key={area} className="px-3 py-2 rounded-[4px] bg-primary/5 border border-primary/10 text-sm text-primary/80 text-center font-medium">
+                        {area}
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Social Links */}
@@ -142,24 +161,6 @@ export function AboutSection() {
                       <span>{link.value}</span>
                     </a>
                   ))}
-                </div>
-              </div>
-
-              {/* Right: Quick Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-1 gap-4 md:min-w-[180px]">
-                <div className="p-4 rounded-[4px] bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
-                  <div className="flex items-center gap-2 mb-1">
-                    <GraduationCap className="w-4 h-4 text-primary" />
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider">Current GPA</span>
-                  </div>
-                  <p className="text-2xl font-bold text-foreground">8.84<span className="text-sm text-muted-foreground">/10</span></p>
-                </div>
-                <div className="p-4 rounded-[4px] bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 border border-cyan-500/20">
-                  <div className="flex items-center gap-2 mb-1">
-                    <BookOpen className="w-4 h-4 text-cyan-400" />
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider">Research</span>
-                  </div>
-                  <p className="text-2xl font-bold text-foreground">Active<span className="text-sm text-muted-foreground ml-1">Profile</span></p>
                 </div>
               </div>
             </div>
@@ -212,7 +213,7 @@ export function AboutSection() {
                 <div className="mt-auto pt-4 border-t border-white/10">
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-muted-foreground uppercase tracking-wider">
-                      {edu.gpa.includes('%') ? 'Percentage' : 'GPA'}
+                      {edu.gpa.includes('%') ? 'Percentage' : 'CGPA'}
                     </span>
                     <span className="text-lg font-bold text-primary">
                       {edu.gpa}
